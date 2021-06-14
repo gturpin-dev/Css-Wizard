@@ -1,0 +1,223 @@
+$color-skin: #f1c5b4;
+$color-primary: #3f64ce;
+$bg_color: deepskyblue;
+$beard_color: #fff;
+
+$wizard_width: 100px;
+$wizard_height: 150px;
+
+$head_width: 75px;
+
+$hat_lower_height: 20px;
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	background-color: #aaa;
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	width: 400px;
+	height: 400px;
+	background-color: $bg_color;
+}
+
+.wizard {
+	position: relative;
+
+	.body {
+		position: relative;
+		width: $wizard_width;
+		height: $wizard_height;
+		background-color: $color-primary;
+
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: calc(#{$wizard_width} - 75px);
+			height: $wizard_height;
+			content: '';
+			background-color: $bg_color;
+			clip-path: polygon(100% 0, 0 0, 100% 100%);
+		}
+	}
+
+	.head {
+		position: absolute;
+		bottom: $wizard_height;
+		left: 0;
+		width: $head_width;
+		height: $head_width;
+		animation: drunk 1s infinite linear;
+
+		@keyframes drunk {
+			0% {
+				transform: rotate(0);
+			} 25% {
+				transform: rotate(10deg);
+			} 50% {
+				transform: rotate(-10deg);
+			} 75% {
+				transform: rotate(-5deg);
+			} 100% {
+				transform: rotate(0);
+			}
+		}
+
+		.hat {
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+
+			.upper {
+				position: absolute;
+				bottom: $hat_lower_height;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border-color: transparent transparent $color-primary transparent;
+				border-style: solid;
+				border-width: 0 calc(#{$head_width} / 2) $head_width calc(#{$head_width} / 2);
+				transform: translateX(-50%);
+
+				&::after {
+					position: absolute;
+					top: calc(#{$head_width} - 1px);
+					left: 0;
+					transform: translateX(-50%);
+					width: $head_width;
+					height: 1px;
+					content: '';
+					background-color: #fff;
+				}
+			}
+
+			.lower {
+				width: calc(#{$head_width} * 2);
+				height: $hat_lower_height;
+				background-color: $color-primary;
+				border-radius: 25px;
+			}
+		}
+
+		.face {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+
+			.rect {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: calc(#{$head_width * .75});
+				height: $hat_lower_height;
+				background-color: $color-skin;
+
+				&::before {
+					position: absolute;
+					border-top-left-radius: 50%;
+					border-bottom-left-radius: 50%;
+					content: '';
+					right: 100%;
+					top: 0;
+					width: $hat_lower_height;
+					height: $hat_lower_height;
+					transform: translateX(50%);
+					background-color: $color-skin;
+				}
+			}
+
+			.cheek {
+				position: absolute;
+				top: 0;
+				right: 25%;
+				width: $hat_lower_height;
+				height: calc(#{$hat_lower_height} * 1.5);
+				background-color: $color-skin;
+				z-index: 10;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: calc(#{$hat_lower_height} * 1.5);
+					left: 0;
+					transform: translateY((-50%));
+					background-color: $color-skin;
+					width: $hat_lower_height;
+					height: $hat_lower_height;
+					border-radius: 50%;
+				}
+
+				.corner {
+					position: absolute;
+					width: $hat_lower_height;
+					height: $hat_lower_height;
+					right: $hat_lower_height;
+					top: calc(#{$hat_lower_height} / 1.25);
+					background-color: $color-skin;
+					z-index: 20;
+
+					&::after {
+						content: '';
+						position: absolute;
+						background-color: $beard_color;
+						width: 100%;
+						height: 100%;
+						border-top-right-radius: 50%;
+					}
+				}
+			}
+
+			.beard {
+				background-color: $beard_color;
+				width: $head_width;
+				height: calc(#{$head_width * 1.5});
+				border-bottom-right-radius: 50%;
+
+				&::before {
+					position: absolute;
+					border-top-left-radius: 50%;
+					border-bottom-left-radius: 50%;
+					content: '';
+					right: 100%;
+					top: calc(#{$hat_lower_height} / 1.25);
+					width: $hat_lower_height;
+					height: $hat_lower_height;
+					transform: translateX(50%);
+					background-color: $beard_color;
+				}
+
+				&::after {
+					position: absolute;
+					content: '';
+					top: calc(#{$hat_lower_height} / 1.25);
+					left: 0;
+					width: calc(#{$head_width * .75});
+					height: $hat_lower_height;
+					background-color: $beard_color;
+				}
+			}
+
+			.ears {
+				position: absolute;
+				left: 100%;
+				top: 0;
+				width: calc(#{$hat_lower_height * .75});
+				border-top-right-radius: 50%;
+				border-bottom-right-radius: 50%;
+				height: $hat_lower_height;
+				background-color: $color-skin;
+				transform: translate(-50%, 40%);
+			}
+		}
+	}
+}
