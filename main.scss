@@ -1,7 +1,7 @@
 $color-skin: #f1c5b4;
 $color-primary: #3f64ce;
 $bg_color: deepskyblue;
-$beard_color: #000;
+$beard_color: #fff;
 
 $wizard_width: 100px;
 $wizard_height: 150px;
@@ -71,34 +71,11 @@ body {
 			}
 		}
 
-		// .hat {
-		// 	position: absolute;
-		// 	bottom: 50%;
-		// 	left: 50%;
-		// 	transform: translateX(-50%);
-
-		// 	.upper {
-		// 		position: absolute;
-		// 		bottom: $hat_lower_height;
-		// 		left: 50%;
-		// 		width: 0;
-		// 		height: 0;
-		// 		border-color: transparent transparent $color-primary transparent;
-		// 		border-style: solid;
-		// 		border-width: 0 calc(#{$head_width} / 2) $head_width calc(#{$head_width} / 2);
-		// 		transform: translateX(-50%);
-
-		// 		&::after {
-		// 			position: absolute;
-		// 			top: calc(#{$head_width} - 1px);
-		// 			left: 0;
-		// 			transform: translateX(-50%);
-		// 			width: $head_width;
-		// 			height: 1px;
-		// 			content: '';
-		// 			background-color: #fff;
-		// 		}
-		// 	}
+		.hat {
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translateX(-50%);
 
 			.upper {
 				position: absolute;

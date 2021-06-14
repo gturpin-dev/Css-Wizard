@@ -107,39 +107,12 @@ body {
   }
 }
 
-<<<<<<< HEAD
-=======
 .wizard .head .hat {
   position: absolute;
   bottom: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-
-.wizard .head .hat .upper {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #3f64ce transparent;
-  border-style: solid;
-  border-width: 0 calc(75px / 2) 75px calc(75px / 2);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.wizard .head .hat .upper::after {
-  position: absolute;
-  top: calc(75px - 1px);
-  left: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 75px;
-  height: 1px;
-  content: '';
-  background-color: #fff;
 }
 
 .wizard .head .hat .upper {
@@ -174,7 +147,6 @@ body {
   border-radius: 25px;
 }
 
->>>>>>> main
 .wizard .head .face {
   position: absolute;
   top: 50%;
@@ -242,14 +214,14 @@ body {
 .wizard .head .face .cheek .corner::after {
   content: '';
   position: absolute;
-  background-color: #000;
+  background-color: #fff;
   width: 100%;
   height: 100%;
   border-top-right-radius: 50%;
 }
 
 .wizard .head .face .beard {
-  background-color: #000;
+  background-color: #fff;
   width: 75px;
   height: calc(112.5px);
   border-bottom-right-radius: 50%;
@@ -266,7 +238,7 @@ body {
   height: 20px;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  background-color: #000;
+  background-color: #fff;
 }
 
 .wizard .head .face .beard::after {
@@ -276,7 +248,7 @@ body {
   left: 0;
   width: calc(56.25px);
   height: 20px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .wizard .head .face .ears {
